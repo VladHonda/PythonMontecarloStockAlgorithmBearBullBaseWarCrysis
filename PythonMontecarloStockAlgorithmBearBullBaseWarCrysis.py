@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # ----------------------------
 # Investment tags
 # ----------------------------
-investment_tags = """#uberAdata #uberAirbnb #uberAlibaba #uberAmd #uberAmazon #uberApple #uberAsus #uberAudi #uberBAESystems #uberBASFSE #uberBlackRock
+investment_tags = """#uberAdata #uberAirbnb #uberAlibaba #uberAmd #uberAmazon #uberApple #uberArista #uberAsus #uberAudi #uberBAESystems #uberBASFSE #uberBlackRock
 #uberBMW #uberBoeing #uberBroadcom #uberC3.ai #uberChengdu #uberCharlesSchwab #uberChevron #uberCorsair #uberDacia #uberDell
 #uberElasticNV #uberEVGA #uberExxonMobil #uberFerrari #uberFidelity #uberFiverrInternationalLtd #uberFondulProprietateaSA
 #uberFord #uberFranklinResourcesInc #uberGeneralDynamics #uberGeneralElectric #uberGhoryanMine #uberGigabyte #uberGmkNorilskNickel
