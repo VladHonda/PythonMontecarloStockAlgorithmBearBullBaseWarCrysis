@@ -1,31 +1,114 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import re
+
+# ----------------------------
+# Clean tag parser (IMPORTANT FIX)
+# ----------------------------
+def parse_tags(tag_string):
+    return re.findall(r"#uber[^\s]+", tag_string)
+
 
 # ----------------------------
 # Investment tags
 # ----------------------------
-investment_tags = """#uberAdata #uberAirbnb #uberAlibaba #uberAmd #uberAmazon #uberApple #uberArista #uberAsus #uberAudi #uberBAESystems #uberBASFSE #uberBlackRock
-#uberBMW #uberBoeing #uberBroadcom #uberC3.ai #uberChengdu #uberCharlesSchwab #uberChevron #uberCorsair #uberDacia #uberDell
-#uberElasticNV #uberEVGA #uberExxonMobil #uberFerrari #uberFidelity #uberFiverrInternationalLtd #uberFondulProprietateaSA
-#uberFord #uberFranklinResourcesInc #uberGeneralDynamics #uberGeneralElectric #uberGhoryanMine #uberGigabyte #uberGmkNorilskNickel
-#uberGoldmanSachs #uberGoogle #uberHidroelectrica #uberHonda #uberHoneywell #uberHyperX #uberHyundai #uberIBM #uberIntel
-#uberJaguar #uberJPMorgan #uberKgMobility #uberLamborghini #uberLenovo #uberLockheedMartin #uberLucid #uberLynk&Co
-#uberMazda #uberMercedes #uberMeta #uberMicrosoft #uberMorganStanley #uberMSI #uberNorthropGrumman #uberNovoNordisk #uberNvidia
-#uberPalantir #uberPorsche #uberPratt&Whitney #uberQualcomm #uberRaytheon #uberRenault #uberRiot #uberSalesforce #uberSamsung
-#uberSchneiderElectric #uberShell #uberShenyang #uberSiemens #uberSiemensEnergy #uberSkoda #uberSkunkWorks #uberSnowflake
-#uberSony #uberTenCent #uberTesla #uberTexasInstruments #uberThales #uberToshiba #uberToyota #uberTwilio #uberUber
-#uberUiPath #uberUnitedTherapeutics #uberUpworkInc #uberVanguard #uberVerisign #uberVertex #uberVolvo #uberVW #uberGLW #uberSpaceX #uberxAi #uberX #uberKratos #uberJEDI #uberAVAV""".replace("\n", " ").split()
+investment_tags_defense = parse_tags("""
+#uberONDS #uberKratos #uberJEDI #uberAVAV
+#uberLockheedMartin #uberNorthropGrumman #uberRaytheon
+#uberGeneralDynamics #uberBAESystems #uberBoeing
+#uberThales #uberPalantir #uberSpaceX
+#uberSkunkWorks #uberPratt&Whitney #uberHoneywell
+""")
 
-all_assets = [tag.replace("#uber","") for tag in investment_tags]
+investment_tags_ai = parse_tags("""
+#uberC3.ai #uberSnowflake #uberElasticNV
+#uberSalesforce #uberTwilio #uberUiPath
+#uberMeta #uberGoogle #uberMicrosoft
+#uberIBM #uberxAi #uberRiot
+""")
+
+investment_tags_semis = parse_tags("""
+#uberNvidia #uberAmd #uberIntel
+#uberBroadcom #uberQualcomm #uberTexasInstruments
+#uberDell #uberLenovo #uberAsus
+#uberGigabyte #uberMSI #uberCorsair
+#uberEVGA #uberHyperX #uberSamsung
+#uberSony #uberToshiba #uberAdata
+#uberApple #uberArista #uberGLW
+""")
+
+investment_tags_auto = parse_tags("""
+#uberTesla #uberLucid #uberBMW
+#uberMercedes #uberAudi #uberPorsche
+#uberFerrari #uberLamborghini #uberToyota
+#uberHonda #uberHyundai #uberVolvo
+#uberVW #uberRenault #uberSkoda
+#uberFord #uberMazda #uberJaguar
+#uberDacia #uberKgMobility #uberLynk&Co
+#uberUber
+""")
+
+investment_tags_energy = parse_tags("""
+#uberChevron #uberExxonMobil #uberShell
+#uberSiemens #uberSiemensEnergy
+#uberSchneiderElectric #uberGeneralElectric
+#uberBASFSE #uberHidroelectrica
+#uberGhoryanMine #uberGmkNorilskNickel
+""")
+
+investment_tags_finance = parse_tags("""
+#uberBlackRock #uberVanguard #uberFidelity
+#uberGoldmanSachs #uberJPMorgan
+#uberMorganStanley #uberCharlesSchwab
+#uberFranklinResourcesInc #uberFondulProprietateaSA
+""")
+
+investment_tags_platforms = parse_tags("""
+#uberAmazon #uberAlibaba #uberTenCent
+#uberAirbnb #uberFiverrInternationalLtd
+#uberUpworkInc
+""")
+
+investment_tags_biotech = parse_tags("""
+#uberNovoNordisk #uberVertex
+#uberUnitedTherapeutics
+""")
+
+investment_tags_regions = parse_tags("""
+#uberChengdu #uberShenyang
+""")
+
+investment_tags_misc = parse_tags("""
+#uberX
+""")
+
+
+# ----------------------------
+# Combined assets
+# ----------------------------
+investment_tags = (
+    investment_tags_defense +
+    investment_tags_ai +
+    investment_tags_semis +
+    investment_tags_auto +
+    investment_tags_energy +
+    investment_tags_finance +
+    investment_tags_platforms +
+    investment_tags_biotech +
+    investment_tags_regions +
+    investment_tags_misc
+)
+
+all_assets = [tag.replace("#uber", "") for tag in investment_tags]
 num_assets_total = len(all_assets)
 
+# ----------------------------
+# Simulation params
+# ----------------------------
 days = 365
 initial_investment = 1000
-num_seeds = 1000
+num_seeds = 500  # reduced for speed
 
-# ----------------------------
-# Scenario parameters
-# ----------------------------
 scenarios = {
     "Bear": {
         "mean": (-0.0010, -0.0002),
@@ -40,47 +123,62 @@ scenarios = {
         "vol": (0.008, 0.018)
     },
     "War / Crisis": {
-        "mean": (-0.0020, -0.0005),  # mostly negative returns
-        "vol": (0.025, 0.05)         # very high volatility
+        "mean": (-0.0020, -0.0005),
+        "vol": (0.025, 0.05)
     }
 }
 
 results = {}
 
+# ----------------------------
+# Simulation
+# ----------------------------
 for scenario_name, params in scenarios.items():
     portfolio_matrix = np.zeros((num_seeds, days))
 
     for seed in range(num_seeds):
-        np.random.seed(seed)
-        
-        mean_returns = np.random.uniform(params["mean"][0], params["mean"][1], size=num_assets_total)
-        std_devs = np.random.uniform(params["vol"][0], params["vol"][1], size=num_assets_total)
-        
-        weights = np.random.dirichlet(np.ones(num_assets_total))
-        
-        returns = np.random.normal(mean_returns, std_devs, size=(days, num_assets_total))
-        cumulative_returns = (1 + returns).cumprod(axis=0)
-        
-        portfolio_values = initial_investment * (cumulative_returns @ weights)
+        rng = np.random.RandomState(seed)
+
+        mean_returns = rng.uniform(
+            params["mean"][0],
+            params["mean"][1],
+            size=num_assets_total
+        )
+
+        vol = rng.uniform(
+            params["vol"][0],
+            params["vol"][1],
+            size=num_assets_total
+        )
+
+        weights = rng.dirichlet(np.ones(num_assets_total))
+
+        # log-return model (more stable than (1+r))
+        returns = rng.normal(mean_returns, vol, size=(days, num_assets_total))
+        cumulative = np.exp(np.cumsum(returns, axis=0))
+
+        portfolio_values = initial_investment * (cumulative @ weights)
         portfolio_matrix[seed] = portfolio_values
 
     results[scenario_name] = portfolio_matrix.mean(axis=0)
 
 # ----------------------------
-# Print final returns
+# Results
 # ----------------------------
 for scenario_name, values in results.items():
     final_value = values[-1]
     final_return = (final_value / initial_investment - 1) * 100
-    print(f"{scenario_name} scenario: ${final_value:.2f} ({final_return:.2f}%)")
+    print(f"{scenario_name}: ${final_value:.2f} ({final_return:.2f}%)")
 
 # ----------------------------
-# Plot all scenarios
+# Plot
 # ----------------------------
 plt.figure(figsize=(12, 6))
+
 for scenario_name, values in results.items():
     plt.plot(values, label=scenario_name)
-plt.title(f"Portfolio Monte Carlo Simulation: Bear / Base / Bull / War")
+
+plt.title("Portfolio Monte Carlo Simulation (All Scenarios)")
 plt.xlabel("Days")
 plt.ylabel("Portfolio Value ($)")
 plt.grid(True)
