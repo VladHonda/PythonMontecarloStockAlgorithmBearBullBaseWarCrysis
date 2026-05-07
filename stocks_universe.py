@@ -46,7 +46,6 @@ def get_stock_universe():
     #uberSiemens #uberSiemensEnergy
     #uberSchneiderElectric #uberGeneralElectric
     #uberBASFSE #uberHidroelectrica
-    #uberGhoryanMine #uberGmkNorilskNickel
     """)
 
     finance_stocks = parse_tags("""
@@ -72,7 +71,7 @@ def get_stock_universe():
     """)
 
     metal_stocks = parse_tags("""
-    #uberUnitedStatesSteelCorporationX
+    #uberUnitedStatesSteelCorporationX #uberGhoryanMine #uberGmkNorilskNickel
     """)
 
     return (
