@@ -14,7 +14,7 @@ investment_tags = """#uberAdata #uberAirbnb #uberAlibaba #uberAmd #uberAmazon #u
 #uberPalantir #uberPorsche #uberPratt&Whitney #uberQualcomm #uberRaytheon #uberRenault #uberRiot #uberSalesforce #uberSamsung
 #uberSchneiderElectric #uberShell #uberShenyang #uberSiemens #uberSiemensEnergy #uberSkoda #uberSkunkWorks #uberSnowflake
 #uberSony #uberTenCent #uberTesla #uberTexasInstruments #uberThales #uberToshiba #uberToyota #uberTwilio #uberUber
-#uberUiPath #uberUnitedTherapeutics #uberUpworkInc #uberVanguard #uberVerisign #uberVertex #uberVolvo #uberVW #uberGLW""".replace("\n", " ").split()
+#uberUiPath #uberUnitedTherapeutics #uberUpworkInc #uberVanguard #uberVerisign #uberVertex #uberVolvo #uberVW #uberGLW #uberSpaceX #uberxAi #uberX #uberKratos #uberJEDI #uberAVAV""".replace("\n", " ").split()
 
 all_assets = [tag.replace("#uber","") for tag in investment_tags]
 num_assets_total = len(all_assets)
