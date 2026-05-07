@@ -6,7 +6,7 @@ def parse_tags(tag_string):
 
 def get_stock_universe():
     defense_stocks = parse_tags("""
-    #uberONDS #uberKratos #uberJEDI #uberAVAV
+    #uberONDS #uberKratos #uberJEDI #uberAVAV #uberDRNZ
     #uberLockheedMartin #uberNorthropGrumman #uberRaytheon
     #uberGeneralDynamics #uberBAESystems #uberBoeing
     #uberThales #uberPalantir #uberSpaceX
@@ -68,11 +68,11 @@ def get_stock_universe():
     """)
 
     region_stocks = parse_tags("""
-    #uberChengdu #uberShenyang
+    #uberAlibabaBABA #uberChengdu #uberShenyang
     """)
 
-    misc_stocks = parse_tags("""
-    #uberX
+    metal_stocks = parse_tags("""
+    #uberUnitedStatesSteelCorporationX
     """)
 
     return (
@@ -85,5 +85,5 @@ def get_stock_universe():
         platform_stocks +
         biotech_stocks +
         region_stocks +
-        misc_stocks
+        metal_stocks
     )
