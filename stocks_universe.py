@@ -1,0 +1,89 @@
+import re
+
+def parse_tags(tag_string):
+    return re.findall(r"#uber[^\s]+", tag_string)
+
+
+def get_stock_universe():
+    defense_stocks = parse_tags("""
+    #uberONDS #uberKratos #uberJEDI #uberAVAV
+    #uberLockheedMartin #uberNorthropGrumman #uberRaytheon
+    #uberGeneralDynamics #uberBAESystems #uberBoeing
+    #uberThales #uberPalantir #uberSpaceX
+    #uberSkunkWorks #uberPratt&Whitney #uberHoneywell
+    """)
+
+    ai_stocks = parse_tags("""
+    #uberC3.ai #uberSnowflake #uberElasticNV
+    #uberSalesforce #uberTwilio #uberUiPath
+    #uberMeta #uberGoogle #uberMicrosoft
+    #uberIBM #uberxAi #uberRiot
+    """)
+
+    semis_stocks = parse_tags("""
+    #uberNvidia #uberAmd #uberIntel
+    #uberBroadcom #uberQualcomm #uberTexasInstruments
+    #uberDell #uberLenovo #uberAsus
+    #uberGigabyte #uberMSI #uberCorsair
+    #uberEVGA #uberHyperX #uberSamsung
+    #uberSony #uberToshiba #uberAdata
+    #uberApple #uberArista #uberGLW
+    """)
+
+    auto_stocks = parse_tags("""
+    #uberTesla #uberLucid #uberBMW
+    #uberMercedes #uberAudi #uberPorsche
+    #uberFerrari #uberLamborghini #uberToyota
+    #uberHonda #uberHyundai #uberVolvo
+    #uberVW #uberRenault #uberSkoda
+    #uberFord #uberMazda #uberJaguar
+    #uberDacia #uberKgMobility #uberLynk&Co
+    #uberUber
+    """)
+
+    energy_stocks = parse_tags("""
+    #uberChevron #uberExxonMobil #uberShell
+    #uberSiemens #uberSiemensEnergy
+    #uberSchneiderElectric #uberGeneralElectric
+    #uberBASFSE #uberHidroelectrica
+    #uberGhoryanMine #uberGmkNorilskNickel
+    """)
+
+    finance_stocks = parse_tags("""
+    #uberBlackRock #uberVanguard #uberFidelity
+    #uberGoldmanSachs #uberJPMorgan
+    #uberMorganStanley #uberCharlesSchwab
+    #uberFranklinResourcesInc #uberFondulProprietateaSA
+    """)
+
+    platform_stocks = parse_tags("""
+    #uberAmazon #uberAlibaba #uberTenCent
+    #uberAirbnb #uberFiverrInternationalLtd
+    #uberUpworkInc
+    """)
+
+    biotech_stocks = parse_tags("""
+    #uberNovoNordisk #uberVertex
+    #uberUnitedTherapeutics
+    """)
+
+    region_stocks = parse_tags("""
+    #uberChengdu #uberShenyang
+    """)
+
+    misc_stocks = parse_tags("""
+    #uberX
+    """)
+
+    return (
+        defense_stocks +
+        ai_stocks +
+        semis_stocks +
+        auto_stocks +
+        energy_stocks +
+        finance_stocks +
+        platform_stocks +
+        biotech_stocks +
+        region_stocks +
+        misc_stocks
+    )
