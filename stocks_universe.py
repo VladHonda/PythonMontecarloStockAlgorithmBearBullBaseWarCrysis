@@ -19,8 +19,8 @@ def get_stock_universe():
         #uberBroadcom #uberQualcomm #uberTexasInstruments #uberDell 
         #uberLenovo #uberAsus #uberGigabyte #uberMSI #uberCorsair
         #uberEVGA #uberHyperX #uberSamsung #uberSony #uberToshiba 
-        #uberAdata #uberApple #uberArista #uberGLW #uberiSharesNasdaq100UCITS 
-        #uberiSharesS&P500InformationTechnologySector
+        #uberAdata #uberApple #uberArista #uberGLW #uberIsharesNasdaq100UCITS 
+        #uberIsharesS&P500InformationTechnologySector
 
         # --- AUTO ---
         #uberTesla #uberLucid #uberBMW #uberMercedes #uberAudi 
@@ -34,21 +34,21 @@ def get_stock_universe():
         #uberCoca-Cola #uberPepsiCo #uberUnilever #uberMondelez
         #uberPhilipMorris #uberDiageo #uberL'Oréal
         #uberXtrackersMSCUSAConsumerStaples #uberInvescoUSConsumerStaplesSector
-        #uberiSharesMSCIEuropeConsumerStaples #uberXtrackersMSCIEuropeConsumerStaplesScreened
-        #uberXtrackersMSCIWorldConsumerStaples #uberiSharesSTOXXEurope600Food&Beverages
+        #uberIsharesMSCIEuropeConsumerStaples #uberXtrackersMSCIEuropeConsumerStaplesScreened
+        #uberXtrackersMSCIWorldConsumerStaples #uberIsharesSTOXXEurope600Food&Beverages
 
         # --- ENERGY ---
         #uberChevron #uberExxonMobil #uberShell #uberSiemens 
         #uberSiemensEnergy #uberSchneiderElectric #uberGeneralElectric
-        #uberBASFSE #uberHidroelectrica #uberiSharesSTOXXEurope600Oil&Gas 
-        #uberXtrackersSTOXXEurope600Oil&Gas #uberiSharesOil&GasE&PUCITS 
+        #uberBASFSE #uberHidroelectrica #uberIsharesSTOXXEurope600Oil&Gas 
+        #uberXtrackersSTOXXEurope600Oil&Gas #uberIsharesOil&GasE&PUCITS 
         #uberSPDRS&PUSEnergySelectSectorUCITS #uberSPDRMSCIEuropeEnergyUCITS
 
         # --- FINANCE & BANKS ---
         #uberBlackRock #uberVanguard #uberFidelity #uberGoldmanSachs 
         #uberJPMorgan #uberMorganStanley #uberCharlesSchwab
         #uberFranklinResourcesInc #uberFondulProprietateaSA
-        #uberLyxorSTOXXEurope600Banks #uberiSharesEUROSTOXXBanks
+        #uberLyxorSTOXXEurope600Banks #uberIsharesEUROSTOXXBanks
 
         # --- PLATFORMS & BIOTECH & REGIONS ---
         #uberAmazon #uberAlibaba #uberTenCent #uberAirbnb 
@@ -58,7 +58,7 @@ def get_stock_universe():
 
         # --- METALS & PRECIOUS METALS ---
         #uberUnitedStatesSteelCorporationX #uberGhoryanMine #uberGmkNorilskNickel
-        #uberiSharesPhysicalGoldETC #uberAmundiPhysicalGoldETC
+        #uberIsharesPhysicalGoldETC #uberAmundiPhysicalGoldETC
         #uberVanEckGoldMinersUCITSETF #uberVanEckJuniorGoldMinersUCITS
 
         # --- REITS, TREASURY & EMERGING MARKETS ---
