@@ -99,6 +99,19 @@ def get_stock_universe():
     #uberVanEckGoldMinersUCITSETF #uberVanEckJuniorGoldMinersUCITS
     """)
 
+    reits_etfs = parse_tags("""
+    #uberiSharesDevelopedMarketsPropertyYield #uberiSharesEuropeanPropertyYield
+    """)
+
+    european_banks_etfs = parse_tags("""
+    #uberLyxorSTOXXEurope600Banks #uberiSharesEUROSTOXXBanks
+    """)
+
+    us_treasury_etfs = parse_tags("""
+    #uberiSharesUSDTreasuryBond20+YearUCITS
+    """)
+
+
     return (
         defense_stocks +
         ai_stocks +
