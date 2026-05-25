@@ -94,6 +94,11 @@ def get_stock_universe():
     #uberUnitedStatesSteelCorporationX #uberGhoryanMine #uberGmkNorilskNickel
     """)
 
+    precious_metals_etfs = parse_tags("""
+    #uberiSharesPhysicalGoldETC #uberAmundiPhysicalGoldETC
+    #uberVanEckGoldMinersUCITSETF #uberVanEckJuniorGoldMinersUCITS
+    """)
+
     return (
         defense_stocks +
         ai_stocks +
