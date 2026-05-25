@@ -62,7 +62,7 @@ def get_stock_universe():
         #uberVanEckGoldMinersUCITSETF #uberVanEckJuniorGoldMinersUCITS
 
         # --- REITS, TREASURY & EMERGING MARKETS ---
-        #uberiSharesDevelopedMarketsPropertyYield #uberiSharesEuropeanPropertyYield
-        #uberiSharesUSDTreasuryBond20+YearUCITS #uberiSharesCoreMSCIEMIMI 
+        #uberIsharesDevelopedMarketsPropertyYield #uberIsharesEuropeanPropertyYield
+        #uberIsharesUSDTreasuryBond20+YearUCITS #uberIsharesCoreMSCIEMIMI 
         #uberVanEckEmergingMarketsUCITS
     """)
