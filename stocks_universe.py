@@ -54,6 +54,12 @@ def get_stock_universe():
     #uberiSharesMSCIEuropeConsumerStaples #uberXtrackersMSCIEuropeConsumerStaplesScreened
     #uberXtrackersMSCIWorldConsumerStaples #uberiSharesSTOXXEurope600Food&Beverages
     """)
+
+    energy_etfs = parse_tags("""
+    #uberiSharesSTOXXEurope600Oil&Gas #uberXtrackersSTOXXEurope600Oil&Gas
+    #uberiSharesOil&GasE&PUCITS #uberSPDRS&PUSEnergySelectSectorUCITS
+    #uberSPDRMSCIEuropeEnergyUCITS
+    """)
     
     energy_stocks = parse_tags("""
     #uberChevron #uberExxonMobil #uberShell
