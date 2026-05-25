@@ -111,6 +111,14 @@ def get_stock_universe():
     #uberiSharesUSDTreasuryBond20+YearUCITS
     """)
 
+    quality_tech_etfs = parse_tags("""
+    #uberiSharesNasdaq100UCITS #uberiSharesS&P500InformationTechnologySector
+    """)
+
+    emerging_markets_etfs = parse_tags("""
+    #uberiSharesCoreMSCIEMIMI #uberVanEckEmergingMarketsUCITS
+    """)
+
 
     return (
         defense_stocks +
