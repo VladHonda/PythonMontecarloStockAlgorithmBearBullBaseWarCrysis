@@ -5,6 +5,8 @@ def parse_tags(tag_string):
 
 
 def get_stock_universe():
+
+      
     defense_stocks = parse_tags("""
     #uberONDS #uberKratos #uberJEDI #uberAVAV #uberDRNZ
     #uberLockheedMartin #uberNorthropGrumman #uberRaytheon
@@ -41,6 +43,18 @@ def get_stock_universe():
     #uberUber
     """)
 
+    consumer_staples_stocks = parse_tags("""
+    #uberNestlé #uberProcter&Gamble #uberCostco #uberWalmart
+    #uberCoca-Cola #uberPepsiCo #uberUnilever #uberMondelez
+    #uberPhilipMorris #uberDiageo #uberL'Oréal
+    """)
+
+    consumer_staples_etfs = parse_tags("""
+    #uberXtrackersMSCUSAConsumerStaples #uberInvescoUSConsumerStaplesSector
+    #uberiSharesMSCIEuropeConsumerStaples #uberXtrackersMSCIEuropeConsumerStaplesScreened
+    #uberXtrackersMSCIWorldConsumerStaples #uberiSharesSTOXXEurope600Food&Beverages
+    """)
+    
     energy_stocks = parse_tags("""
     #uberChevron #uberExxonMobil #uberShell
     #uberSiemens #uberSiemensEnergy
